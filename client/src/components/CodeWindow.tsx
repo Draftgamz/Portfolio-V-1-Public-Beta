@@ -6,20 +6,6 @@ interface CodeWindowProps {
 }
 
 export default function CodeWindow({ code, filename }: CodeWindowProps) {
-  const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
-  const codeWindowRef = React.useRef<HTMLDivElement>(null);
-
-  // Handle mouse move to update gradient position
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (codeWindowRef.current) {
-      const rect = codeWindowRef.current.getBoundingClientRect();
-      setMousePosition({
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top
-      });
-    }
-  };
-
   // Split the code into lines and add line numbers
   const codeLines = code.split("\n").map((line, index) => {
     return (
@@ -36,26 +22,14 @@ export default function CodeWindow({ code, filename }: CodeWindowProps) {
   });
 
   return (
-    <div 
-      ref={codeWindowRef}
-      className="code-window w-full relative group"
-      onMouseMove={handleMouseMove}
-    >
-      {/* Gradient glow effect */}
-      <div 
-        className="absolute -inset-[1px] bg-gradient-to-r from-github-blue/30 via-purple-500/30 to-github-green/30 rounded-lg blur-lg group-hover:opacity-100 opacity-0 transition-opacity duration-500"
-        style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(88,166,255,0.15), transparent 40%)`
-        }}
-      />
-      
-      <div className="code-header relative">
+    <div className="code-window w-full">
+      <div className="code-header">
         <div className="window-button bg-red-500"></div>
         <div className="window-button bg-yellow-500"></div>
         <div className="window-button bg-green-500"></div>
         <div className="ml-4 text-xs text-github-muted">{filename}</div>
       </div>
-      <div className="code-content relative">
+      <div className="code-content">
         <pre>{codeLines}</pre>
       </div>
     </div>
