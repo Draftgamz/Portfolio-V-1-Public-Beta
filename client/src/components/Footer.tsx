@@ -97,7 +97,6 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row justify-between items-start mb-16 pb-16 border-b border-github-border">
           <div className="max-w-md mb-10 lg:mb-0">
             <div className="flex items-center mb-6">
-              <img src={logoImage} alt="Draft Logo" className="h-12 w-auto mr-3" />
               <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-github-blue">Draft</span>
             </div>
             <p className="text-github-muted mb-8">
@@ -242,3 +241,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+              
