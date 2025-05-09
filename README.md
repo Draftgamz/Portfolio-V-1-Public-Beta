@@ -1,5 +1,6 @@
 # 🌐 My Personal Portfolio Website
 
+[![Website Status](https://img.shields.io/badge/status-online-brightgreen)](https://draftgamz.github.io/portfolio-v-6)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Built with Vite](https://img.shields.io/badge/built%20with-Vite-yellow)](https://vitejs.dev/)
 ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=Draftgamz.portfolio-v-6)
